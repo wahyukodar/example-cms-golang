@@ -21,7 +21,7 @@
             <!-- Horizontal Form -->
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">个人信息</h3>
+                    <h3 class="box-title">Personal Information</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -51,12 +51,12 @@
 
                             {{else}}
                             <div class="col-sm-4">
-                                <a href="/auth/github" class="btn btn-primary">绑定</a>
+                                <a href="/auth/github" class="btn btn-primary">Binding</a>
                             </div>
                             {{end}}
                         </div>
                         <div class="form-group">
-                            <label for="joinTime" class="col-sm-2 control-label">注册时间</label>
+                            <label for="joinTime" class="col-sm-2 control-label">Registration Time</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" id="joinTime" value="{{dateFormat .user.CreatedAt "2006-01-02 15:04:05"}}" readOnly>
                             </div>

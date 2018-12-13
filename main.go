@@ -7,9 +7,6 @@ import (
 
 	"path/filepath"
 
-	"os"
-	"strings"
-
 	"wblog/controllers"
 	"wblog/helpers"
 	"wblog/models"
@@ -253,14 +250,14 @@ func AuthRequired() gin.HandlerFunc {
 	}
 }
 
-func getCurrentDirectory() string {
-	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
-	if err != nil {
-		seelog.Critical(err)
-	}
-	return strings.Replace(dir, "\\", "/", -1)
-}
+// func getCurrentDirectory() string {
+// 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+// 	if err != nil {
+// 		seelog.Critical(err)
+// 	}
+// 	return strings.Replace(dir, "\\", "/", -1)
+// }
 
-//func getCurrentDirectory() string {
-//	return ""
-//}
+func getCurrentDirectory() string {
+	return ""
+}

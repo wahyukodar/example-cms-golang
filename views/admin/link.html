@@ -43,11 +43,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                <small>友链管理<a class="btn btn-primary" href="javascript:void(0);" data-href="/admin/new_link" data-toggle="modal" data-target="#add-dialog"><span class="glyphicon glyphicon-plus"></span>新增</a></small>
+                <small>Manajemen Pertemanan<a class="btn btn-primary" href="javascript:void(0);" data-href="/admin/new_link" data-toggle="modal" data-target="#add-dialog"><span class="glyphicon glyphicon-plus"></span>Add</a></small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/admin/index"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active"><a href="#">友链管理</a></li>
+                <li class="active"><a href="#">Manajemen Pertemanan</a></li>
             </ol>
         </section>
 
@@ -65,12 +65,12 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>名称</th>
-                                    <th>链接</th>
-                                    <th>排序</th>
-                                    <th>访问次数</th>
-                                    <th>创建时间</th>
-                                    <th>操作</th>
+                                    <th>Name</th>
+                                    <th>Url</th>
+                                    <th>Sort</th>
+                                    <th>View</th>
+                                    <th>Created At</th>
+                                    <th>Aksi</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -109,14 +109,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                请确认
+                Please Confirm
             </div>
             <div class="modal-body">
-                确认删除该记录吗？
+                Yakin Ingin Hapus?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <a class="btn btn-danger btn-ok">删除记录</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-danger btn-ok">Hapus</a>
             </div>
         </div>
     </div>
@@ -126,28 +126,28 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                新增或添加
+                Add
             </div>
             <div class="modal-body">
                 <form id="add-form" class="form-inline">
                     <input name="id" type="hidden">
                     <div class="form-group">
-                        <label class="sr-only" for="nameInput">名称</label>
-                        <input type="text" name="name" class="form-control" id="nameInput" placeholder="名称">
+                        <label class="sr-only" for="nameInput">Name</label>
+                        <input type="text" name="name" class="form-control" id="nameInput" placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="urlInput">链接</label>
-                        <input type="text" name="url" class="form-control" id="urlInput" placeholder="链接">
+                        <label class="sr-only" for="urlInput">URL</label>
+                        <input type="text" name="url" class="form-control" id="urlInput" placeholder="url">
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="urlSort">排序</label>
-                        <input type="text" name="sort" class="form-control" id="urlSort" placeholder="排序">
+                        <label class="sr-only" for="urlSort">Url Sort</label>
+                        <input type="text" name="sort" class="form-control" id="urlSort" placeholder="Sort URL">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <a class="btn btn-primary btn-save">保存</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary btn-save">Save</a>
             </div>
         </div>
     </div>
@@ -191,11 +191,10 @@
         if(data){
             var fields = $("#add-form").serializeArray();
             $.each( fields, function(i, field){
-                //jquery根据name属性查找
                 $(":input[name='"+field.name+"']").val(data[i]);
             });
         }
-        $(this).find('.btn-save').unbind("click"); //移除click
+        $(this).find('.btn-save').unbind("click"); 
         $(this).find('.btn-save').click(function(){
             $.post($(e.relatedTarget).data('href'),$('#add-form').serialize(),function(result){
                 window.location.href = window.location.href;
